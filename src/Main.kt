@@ -16,18 +16,23 @@ fun main(args: Array<String>) {
                 println("Добавлено!")
             }
             2 -> {
+                if (map.elements.size == 0) println("У меня нет пар для удаления!")
+                else{
                 println("Введите ключ для удаления:")
                 val key = nextLine().trim()
                 println("Введите значение для удаления:")
                 val value = nextLine().trim()
-                println(decline(map.delete(key, value)))
+                println(decline(map.delete(key, value)))}
             }
             3 -> {
-                println("Введите ключ для поиска:")
-                val key = nextLine().trim()
-                println("Введите значение для поиска:")
-                val value = nextLine().trim()
-                map.find(key, value).forEach { el -> println("Ключ: ${el.key}, Значение: ${el.value}") }
+                if (map.elements.size == 0) println("У меня нет пар для поиска!")
+                else {
+                    println("Введите ключ для поиска:")
+                    val key = nextLine().trim()
+                    println("Введите значение для поиска:")
+                    val value = nextLine().trim()
+                    map.find(key, value).forEach { el -> println("Ключ: ${el.key}, Значение: ${el.value}") }
+                }
             }
             4 -> {
                 exit = true
